@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ChelianggoumaiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ChelianggoumaiEntity" id="chelianggoumaiMap">
+        <result property="cheliangbianhao" column="cheliangbianhao"/>
+        <result property="cheliangmingcheng" column="cheliangmingcheng"/>
+        <result property="cheliangpinpai" column="cheliangpinpai"/>
+        <result property="cheliangleixing" column="cheliangleixing"/>
+        <result property="cheliangyanse" column="cheliangyanse"/>
+        <result property="huandangfangshi" column="huandangfangshi"/>
+        <result property="cheliangtianchuang" column="cheliangtianchuang"/>
+        <result property="qichepailiang" column="qichepailiang"/>
+        <result property="chezuo" column="chezuo"/>
+        <result property="cheliangjiage" column="cheliangjiage"/>
+        <result property="dinggoushuliang" column="dinggoushuliang"/>
+        <result property="shifujine" column="shifujine"/>
+        <result property="zhanghao" column="zhanghao"/>
+        <result property="xingming" column="xingming"/>
+        <result property="lianxidianhua" column="lianxidianhua"/>
+        <result property="shouhuodizhi" column="shouhuodizhi"/>
+        <result property="dinggoushijian" column="dinggoushijian"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+        <result property="ispay" column="ispay"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ChelianggoumaiVO" >
+		SELECT * FROM chelianggoumai  chelianggoumai         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ChelianggoumaiVO" >
+		SELECT  chelianggoumai.* FROM chelianggoumai  chelianggoumai 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ChelianggoumaiView" >
+
+		SELECT  chelianggoumai.* FROM chelianggoumai  chelianggoumai 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ChelianggoumaiView" >
+		SELECT * FROM chelianggoumai  chelianggoumai <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
